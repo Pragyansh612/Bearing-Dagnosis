@@ -31,6 +31,8 @@ Do not commit `.mat` files. Download the dataset from Mendeley and point the dem
 
 Training entry points live under `src/training/`. They expect the SCA folder layout and a configured Python environment with the same dependencies as above (optionally CUDA-enabled `torch`).
 
+streamlit run app.py
+
 ## License
 
 Add your team or institution license before public release if required by the hackathon or dataset terms.
