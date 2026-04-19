@@ -1,0 +1,67 @@
+{
+  "dataset": "internal_folders_1_to_7",
+  "accuracy": 0.9507625272331155,
+  "f1_macro": 0.7415343122565179,
+  "precision": 0.75,
+  "recall": 0.7336231884057971,
+  "roc_auc": NaN,
+  "mcc": 0.8957833520015334,
+  "kappa": 0.8880572372041827,
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      113,
+      1612,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      345,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      225
+    ]
+  ],
+  "per_class": {
+    "Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "Inner Race Fault": {
+      "precision": 1.0,
+      "recall": 0.9344927536231884,
+      "f1": 0.9661372490260713,
+      "support": 1725
+    },
+    "Ball Fault": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 345
+    },
+    "Outer Race Fault": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 225
+    }
+  },
+  "hidden_test": {
+    "accuracy": 0.6367,
+    "f1_macro": 0.4247,
+    "note": "from hidden_v5_results.json"
+  }
+}

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.py text diff=python
+*.pth binary
+*.pkl binary
+*.npy binary
+*.png binary
+*.mat binary

@@ -1,0 +1,44 @@
+[
+  {
+    "config": "V5 FULL (all components)",
+    "accuracy": 0.6366666666666667,
+    "f1_macro": 0.4246632035885359,
+    "delta_vs_full": 0.0
+  },
+  {
+    "config": "No embedding normalization",
+    "accuracy": 0.6366666666666667,
+    "f1_macro": 0.4246632035885359,
+    "delta_vs_full": 0.0
+  },
+  {
+    "config": "No margin override",
+    "accuracy": 0.6366666666666667,
+    "f1_macro": 0.4246632035885359,
+    "delta_vs_full": 0.0
+  },
+  {
+    "config": "No BPFO physics override",
+    "accuracy": 0.4766666666666667,
+    "f1_macro": 0.3156887454536141,
+    "delta_vs_full": -0.16000000000000003
+  },
+  {
+    "config": "No health check",
+    "accuracy": 0.46,
+    "f1_macro": 0.3285308556686925,
+    "delta_vs_full": -0.1766666666666667
+  },
+  {
+    "config": "Prototype only (no overrides)",
+    "accuracy": 0.30333333333333334,
+    "f1_macro": 0.22984622048949532,
+    "delta_vs_full": -0.33333333333333337
+  },
+  {
+    "config": "Raw softmax only (no prototype)",
+    "accuracy": 0.30666666666666664,
+    "f1_macro": 0.23061752713189362,
+    "delta_vs_full": -0.33000000000000007
+  }
+]

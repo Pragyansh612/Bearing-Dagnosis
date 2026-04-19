@@ -1,0 +1,7 @@
+{
+  "macro_auc": 0.30200000000000005,
+  "per_class_auc": {
+    "Healthy": 0.3134,
+    "Outer Race Fault": 0.2906
+  }
+}

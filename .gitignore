@@ -1,0 +1,82 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+/build/
+/dist/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+.streamlit/secrets.toml
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- SCA / vibration data (large; download from Mendeley) ---
+*.mat
+data/
+datasets/
+
+# --- ML checkpoints outside shipped models/ (optional local runs) ---
+/checkpoints/
+/runs/
+wandb/
+mlruns/
+lightning_logs/
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+
+# Ignore weight pickles globally, then allow committed demo weights in models/
+*.pth
+!models/*.pth
+
+# Ignore numpy archives globally, then allow class prototypes in models/
+*.npy
+!models/class_centers.npy
+
+# Ignore joblib pickles globally, then allow shipped artifacts in models/
+*.pkl
+!models/*.pkl
+
+# --- Test & coverage ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# --- OS & editors ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# --- Cursor / local tooling ---
+.cursor/

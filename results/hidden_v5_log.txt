@@ -1,0 +1,88 @@
+Loading models...
+  Model: epoch=4, val_f1=0.9870
+  Class centers: (4, 256)
+    Healthy             : 940 embeddings
+    Inner Race Fault    : 731 embeddings
+    Ball Fault          : 147 embeddings
+    Outer Race Fault    : 94 embeddings
+
+======================================================================
+HIDDEN FOLDER TEST — V5 — EMB NORM + MARGIN + PHYSICS OVERRIDES
+======================================================================
+
+  Folder 8/train.mat — True: Healthy
+  Correct: 98/100 (98.0%) | AE: 16.6σ | Proto=Softmax: 95/100
+  Overrides — BPFO: 2
+  Overrides — HEALTH_CHECK: 6
+  LOW_CONFIDENCE: 100
+  → Healthy: 98 (98.0%)
+  → Outer Race Fault: 2 (2.0%)
+
+  Folder 8/test.mat — True: Outer Race Fault
+  Correct: 13/100 (13.0%) | AE: 26.9σ | Proto=Softmax: 100/100
+  Overrides — BPFO: 13
+  LOW_CONFIDENCE: 100
+  → Healthy: 87 (87.0%)
+  → Outer Race Fault: 13 (13.0%)
+
+  Folder 9/train.mat — True: Healthy
+  Correct: 0/100 (0.0%) | AE: 11.9σ | Proto=Softmax: 99/100
+  Overrides — MARGIN: 1
+  Overrides — BPFO: 2
+  CONFIDENT: 32
+  LOW_CONFIDENCE: 68
+  → Outer Race Fault: 100 (100.0%)
+
+  Folder 9/test.mat — True: Outer Race Fault
+  Correct: 100/100 (100.0%) | AE: 15.1σ | Proto=Softmax: 96/100
+  Overrides — BPFO: 16
+  CONFIDENT: 4
+  LOW_CONFIDENCE: 96
+  → Outer Race Fault: 100 (100.0%)
+
+  Folder 10/train.mat — True: Healthy
+  Correct: 100/100 (100.0%) | AE: 53.2σ | Proto=Softmax: 100/100
+  Overrides — HEALTH_CHECK: 100
+  LOW_CONFIDENCE: 97
+  UNCERTAIN: 3
+  → Healthy: 100 (100.0%)
+
+  Folder 10/test.mat — True: Outer Race Fault
+  Correct: 71/100 (71.0%) | AE: 8.6σ | Proto=Softmax: 94/100
+  Overrides — BPFO: 71
+  CONFIDENT: 51
+  LOW_CONFIDENCE: 48
+  UNCERTAIN: 1
+  → Healthy: 28 (28.0%)
+  → Inner Race Fault: 1 (1.0%)
+  → Outer Race Fault: 71 (71.0%)
+
+
+======================================================================
+OVERALL — V5 — HIDDEN FOLDERS 8, 9, 10
+======================================================================
+
+  Total: 600
+  Accuracy:  0.6367 (63.7%)
+  Macro F1:  0.4247
+  Precision: 0.4253
+  Recall:    0.4244
+  MCC:       0.2748
+  Kappa:     0.2745
+
+  Decisions:
+  CONFIDENT           :   87 (14.5%)
+  LOW_CONFIDENCE      :  509 (84.8%)
+  UNCERTAIN           :    4 (0.7%)
+
+  Per-class:
+  Class                  Prec    Rec     F1      Sup
+  Healthy              0.6326 0.6600 0.6460      300
+  Outer Race Fault     0.6434 0.6133 0.6280      300
+
+  Confusion Matrix:
+                           Healthy    Inner Ra    Ball Fau    Outer Ra
+  Healthy                      198           0           0         102
+  Outer Race Fault             115           1           0         184
+
+Saved to results/hidden_v5_results.json
