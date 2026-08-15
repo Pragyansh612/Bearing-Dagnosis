@@ -34,5 +34,3 @@ Training entry points live under `src/training/`. They expect the SCA folder lay
 streamlit run app.py
 
 ## License
-
-Add your team or institution license before public release if required by the hackathon or dataset terms.
