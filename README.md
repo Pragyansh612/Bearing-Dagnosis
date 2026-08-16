@@ -10,6 +10,18 @@ Welcome to our solution for the **HCL Tech Hackathon** at **IIT Mandi**. This re
 
 ---
 
+##  Problem Statement
+
+**Challenge:** Bearing faults are a leading cause of machine downtime in industrial settings. Traditional diagnostic methods often fail when deployed on new machines running at different speeds or under varying operating conditions.
+
+**Our Solution:** We developed a **multimodal, physics-informed deep learning system** that:
+- Leverages **order-domain processing** to be invariant to RPM and machine geometry.
+- Incorporates **physics-based features** to ensure predictions are physically consistent.
+- Provides **uncertainty quantification** to flag low-confidence predictions.
+- Detects **unknown fault patterns** using an autoencoder trained on healthy data.
+
+---
+
 ## 🌐 Live Demo
 
 Experience the application instantly without any setup:
@@ -17,14 +29,50 @@ Experience the application instantly without any setup:
 👉 **[bearing-dagnosis.streamlit.app](https://bearing-dagnosis.streamlit.app/)**
 
 The live demo allows you to:
-- **Upload your own `.mat` files** or use pre-loaded samples.
-- **Interactively select signal windows** for precise diagnosis.
-- **Explore order-domain spectrograms** and physics-based explanations.
-- **Visualize model uncertainty** and branch attention weights.
+- **Upload your  `.mat` files** .
+- **Interactively select signal windows** for precise diagnosis
+- **Explore order-domain spectrograms** and physics-based explanations
+- **Visualize model uncertainty** and branch attention weights
 
 ---
 
-## 🧠 Model Architecture
+##  Dataset: SCA Bearing Dataset
+
+We use the **SCA Bearing Dataset**, which is publicly available on Mendeley Data. This dataset was specifically designed for benchmarking domain generalization in bearing fault diagnosis.
+
+### Dataset Overview
+
+| Property | Details |
+| :--- | :--- |
+| **Dataset Name** | SCA Bearing Dataset |
+| **Mendeley DOI** | [tdn96mkkpt](https://data.mendeley.com/datasets/tdn96mkkpt/2) |
+| **Total Size** | ~1.5 GB |
+| **Signal Type** | Vibration (accelerometer) |
+| **Sampling Rate** | 5,120 Hz (for most measurements) |
+| **Window Length** | 2,048 samples (~0.4 seconds) |
+
+### Fault Types
+
+The dataset contains four classes of bearing conditions:
+
+| Class | Fault Type | Description |
+| :--- | :--- | :--- |
+| **0** | Healthy | Normal bearing operation, no faults |
+| **1** | Inner Race Fault (BPFI) | Fault on the bearing inner race |
+| **2** | Ball Fault (BSF) | Fault on the rolling elements |
+| **3** | Outer Race Fault (BPFO) | Fault on the bearing outer race |
+
+### Dataset Structure
+
+The dataset is organized into folders (1-10), each representing a different machine/experiment:
+
+**Key Points:**
+- **Folders 1-7:** Used for training and internal validation
+- **Folders 8-10:** Completely unseen machines (domain generalization test)
+- Each `.mat` file contains raw vibration signals with associated metadata (RPM, sampling rate, fault frequencies)
+
+
+##  Model Architecture
 
 Our system employs a **multimodal, physics-informed neural network** designed for robust and interpretable fault diagnosis. It consists of three parallel branches that process different aspects of the vibration signal, fused by an attention mechanism.
 
